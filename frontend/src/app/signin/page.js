@@ -1,6 +1,19 @@
 // frontend/src/app/signin.js
+'use client';
 
 import { FaGoogle, FaGithub } from 'react-icons/fa'; // Import Google and GitHub icons
+import axios from 'axios';
+
+const handleSignIn = async (event) => {
+  event.preventDefault();
+  const response = await axios.post('http://127.0.0.1:8000/login/', {
+    username: email, // Use your input field name
+    password: password, // Use your input field name
+  });
+  if (response.status === 200) {
+    // Store the token in localStorage or context
+  }
+};
 
 export default function SignIn() {
   return (
@@ -20,7 +33,9 @@ export default function SignIn() {
             className="p-2 border border-gray-300 rounded-md"
             required
           />
-          <button className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600">
+          <button className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600"
+            onClick={handleSignIn}
+          >
             Sign In
           </button>
         </form>

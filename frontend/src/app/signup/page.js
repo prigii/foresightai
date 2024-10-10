@@ -1,6 +1,18 @@
 // frontend/src/app/signup.js
+'use client'
 
 import { FaGoogle, FaGithub } from 'react-icons/fa'; // Import Google and GitHub icons
+const handleSignUp = async (event) => {
+  event.preventDefault();
+  const response = await axios.post('http://127.0.0.1:8000/signup/', {
+    username,
+    email,
+    password,
+  });
+  if (response.status === 201) {
+    // Handle successful sign up
+  }
+};
 
 export default function SignUp() {
   return (
@@ -38,7 +50,9 @@ export default function SignUp() {
             className="p-2 border border-gray-300 rounded-md"
             required
           />
-          <button className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600">
+          <button className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600"
+            onClick={handleSignUp}
+          >
             Sign Up
           </button>
         </form>
@@ -52,10 +66,10 @@ export default function SignUp() {
 
         {/* Social Sign Up Options */}
         <div className="flex justify-center space-x-4">
-          <button className="flex items-center px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100 transition">
+          <button className="flex w-40 items-center px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100 transition">
             <FaGoogle className="mr-2" /> Google
           </button>
-          <button className="flex items-center px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100 transition">
+          <button className="flex w-40 items-center px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100 transition">
             <FaGithub className="mr-2" /> GitHub
           </button>
         </div>

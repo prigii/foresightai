@@ -1,9 +1,14 @@
 // frontend/app/page.js
+'use client';
 
+import { useState } from "react";
 import Image from "next/image";
 import bgImage from "../assets/bg-image.png";
+import FileUploadModal from '../components/FileUpload';
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="relative w-full h-screen bg-gray-50">
       {/* Hero Section */}
@@ -44,9 +49,17 @@ export default function Home() {
           {/* Upload Data Button */}
           <button
             className="mt-8 px-6 py-3 bg-blue-600 text-white text-lg font-medium rounded-lg shadow-lg hover:bg-blue-700 transition duration-300"
+            onClick={() => setIsModalOpen(true)}
+            
           >
             Upload Data (CSV or XLSX)
           </button>
+
+      {/* Modal for file upload */}
+          <FileUploadModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
         </div>
       </div>
     </div>

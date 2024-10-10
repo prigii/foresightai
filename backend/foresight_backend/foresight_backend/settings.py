@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',  # Django REST framework
     'corsheaders',     # Allow CORS for frontend-backend communication
     'core',            # Our main app
+    'django.contrib.sites',  # if you're using Django Allauth for social auth
+    'rest_framework.authtoken',  # If using token authentication
 ]
 # Allow cross-origin requests for communication with the frontend
 CORS_ALLOWED_ORIGINS = [
