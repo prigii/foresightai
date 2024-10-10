@@ -1,13 +1,8 @@
 // frontend/src/pages/about.js
 
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-
-
-const About = () => {
+export default function About () {
     return (
-        <>
-            <Navbar />
+       
             <div className="flex flex-col items-center justify-center w-full h-screen bg-gray-100">
                 <div className="max-w-3xl p-8 bg-white shadow-lg rounded-lg">
                 <h1 className="text-4xl font-bold text-center mb-4">About ForeSightAI</h1>
@@ -29,10 +24,8 @@ const About = () => {
                 </p>
                 </div>
             </div>
-            <Footer />
-        </>
+        
     );
   };
-  
-  export default About;
+ 
   

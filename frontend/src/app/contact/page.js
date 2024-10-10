@@ -1,11 +1,8 @@
 // frontend/src/pages/contact.js
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
-const Contact = () => {
+export default function Contact() {
   return (
-    <>
-      <Navbar />
+   
       <div className="flex flex-col items-center justify-center w-full h-screen bg-gray-100">
         <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
         <p className="text-center max-w-lg mb-4">We’d love to hear from you! Reach out to us via email at contact@foresightai.com.</p>
@@ -33,9 +30,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <Footer />
-    </>
+     
   );
 };
 
-export default Contact;
